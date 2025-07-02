@@ -1,14 +1,16 @@
 const express=require("express");
-const {URL}=require("../models/url");
+const URL=require("../models/url");
 const router=express.Router();
 
 
 router.get("/",async (req,res)=>{
-    const allUrls=await URL.find({});
-    return res.render("home",{
-        urls:allUrls,
-    });
+    
+  const allurls = await URL.find({ });
+  return res.render("home", {
+    urls: allurls,
+  });
 })
+
 
 
 module.exports=router;
